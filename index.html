@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Bipro - Home</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/bipro-style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top main-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo-bipro.png" height="50" alt="logo" />
+      </a>
+    </div>
+  </nav>
+  <div class="burger-menu">
+    <button class="navbar-toggler" type="button" id="sidebarButton">
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <!-- END HEADER -->
+
+  <!-- SIDEBAR -->
+  <div id="sidenav" class="sidebar"></div>
+  <!-- END SIDEBAR -->
+
+  <!-- CONTENT -->
+  <h1 class="sr-only">Jual Beli Rumah</h1>
+
+  <!-- Banner -->
+  <div class="banner" style="background-image:url('images/bg-banner.jpg')">
+    <div class="banner-content">
+      <div class="container">
+        <div id="carouselBanner" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2>Lorem Ipsum</h2>
+            </div>
+            <div class="carousel-item">
+              <h2>Dolor Ipsum</h2>
+            </div>
+            <div class="carousel-item">
+              <h2>Sit Ipsum Amet</h2>
+            </div>
+          </div>
+        </div>
+        <div class="banner-menu">
+          <a href="visitus.html" class="btn btn-lg btn-secondary">VISIT US</a>
+          <a href="ourhomes.html" class="btn btn-lg btn-secondary">OUR HOMES</a>
+          <a href="gallery.html" class="btn btn-lg btn-secondary">HOME GALLERY</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Banner -->
+
+  <!-- END CONTENT -->
+
+  <!-- FOOTER -->
+  <footer class="footer-landing">
+    <div class="text-center text-white mt-4 p-3">
+      <p class="mb-0">
+        <small>Bipro&copy;2019 &middot; <a href="contact.html" class="text-white">Contact</a></small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- END FOOTER -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#sidenav").load("./partial/sidebar.html");
+    });
+  </script>
+</body>
+
+</html>

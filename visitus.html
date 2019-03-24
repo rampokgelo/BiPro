@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Bipro - Visit Us</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/bipro-style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top main-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo-bipro.png" height="50" alt="logo" />
+      </a>
+    </div>
+  </nav>
+  <div class="burger-menu">
+    <button class="navbar-toggler" type="button" id="sidebarButton">
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <!-- END HEADER -->
+
+  <!-- SIDEBAR -->
+  <div id="sidenav" class="sidebar"></div>
+  <!-- END SIDEBAR -->
+
+  <!-- CONTENT -->
+  <div class="wrapper-content">
+    <div class="banner banner-heading" style="background-image:url('images/bg-banner.jpg')"></div>
+    <div class="container">
+      <div class="py-5">
+        <h1 class="text-center mb-4">Visit Us</h1>
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2">
+            <p class="text-center">
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form, by
+              injected humour, or randomised words which don't look even
+              slightly believable. If you are going to use a passage of Lorem
+              Ipsum, you need to be sure there isn't anything embarrassing
+              hidden in the middle of text. All the Lorem Ipsum generators on
+              the Internet tend to repeat predefined chunks as necessary, making
+              this the first true generator on the Internet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="halfgrid">
+      <div class="row">
+        <div class="col-12 col-sm-6 img-halfgrid">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe width="100%" height="100%" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=alfamart%20old%20west%20cape&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 content-halfgrid bg-dark text-white">
+          <div class="wrapper-halfgrid">
+            <div>
+              <h3>Location</h3>
+              <p>
+                Jagakarsa,Jakarta Selatan<br />
+                Kode Pos : 32566
+              </p>
+              <h4>Phone</h4>
+              <p>+ 62 826612655</p>
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:bipro_development@gmail.com" class="text-white">bipro_development@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-6 img-halfgrid" style="background-image:url('images/bg-exp.jpg')"></div>
+        <div class="col-12 col-sm-6 content-halfgrid bg-dark text-white">
+          <div class="wrapper-halfgrid">
+            <div>
+              <h3>Over 5 years of experiences</h3>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour,
+              </p>
+              <a href="gallery.html" class="btn btn-gray">HOMES GALLERY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END CONTENT -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="text-center p-3">
+      <p class="mb-0">
+        <small>Bipro&copy;2019 &middot;
+          <a href="contact.html" class="text-dark">Contact</a></small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- END FOOTER -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#sidenav").load("./partial/sidebar.html");
+    });
+  </script>
+</body>
+
+</html>
