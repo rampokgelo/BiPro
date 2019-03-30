@@ -1,0 +1,322 @@
+$total-items: 4;
+
+.burger-menu {
+    position: fixed;
+    top: 15px;
+    right: $spacer;
+    z-index: 1040;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 1035;
+    right: -100%;
+    top: 0;
+    width: 280px;
+    height: 100%;
+    background: $white;
+    text-align: center;
+    padding: ($spacer *4) ($spacer *1.5) ($spacer *1.5);
+    overflow-y: auto;
+    @include transition(all .5s ease-in-out);
+
+    .navbar-nav {
+        .nav-item {
+            border-bottom: solid 1px $gray-300;
+
+            >.nav-link {
+                padding: $spacer;
+                color: $body-color;
+                font-size: $font-size-base*1.25;
+            }
+        }
+    }
+
+    &.show {
+        right: 0;
+
+        .navbar-nav {
+            .nav-item {
+                animation: fadeIn 0.5s linear;
+                animation-fill-mode: both;
+                position: relative;
+            }
+
+            // Set delay per List Item
+            @for $i from 1 through $total-items {
+                .nav-item:nth-child(#{$i}) {
+                    animation-delay: .25s * $i;
+                }
+            }
+
+            // Keyframe animation
+            @-webkit-keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    top: 100px;
+                }
+
+                75% {
+                    opacity: 0.5;
+                    top: 0px;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    height: 100vh;
+    @include bg-cover;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, .3);
+        left: 0;
+        top: 0;
+    }
+
+    .banner-content {
+        position: absolute;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: $white;
+
+        .carousel {
+            margin-bottom: $spacer*1.5;
+
+            h2 {
+                font-size: $font-size-base * 3;
+                text-shadow: 0 5px 5px rgba(0, 0, 0, .7);
+            }
+        }
+
+        .banner-menu {
+            .btn {
+                width: 200px;
+                border-color: rgba(0, 0, 0, .7);
+                background: rgba(0, 0, 0, .7);
+                margin: auto $spacer/2;
+
+                &:hover {
+                    border-color: $primary;
+                    background: $primary;
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                .btn {
+                    margin: $spacer /2 auto auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &.banner-heading {
+        height: 80vh;
+    }
+}
+
+.wrapper-content {
+    padding-top: 75px;
+}
+
+footer {
+    &.footer-landing {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.halfgrid {
+    .row {
+        margin: auto;
+
+        [class*="col-"],
+        [class^="col-"] {
+            height: 400px;
+            padding: 0;
+        }
+
+        .img-halfgrid {
+            @include bg-cover;
+        }
+
+        .content-halfgrid {
+            >.wrapper-halfgrid {
+                padding: ($spacer*1.5) ($spacer*4);
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+            }
+
+            @include media-breakpoint-down(sm) {
+                height: auto;
+                min-height: 400px;
+
+                >.wrapper-halfgrid {
+                    padding: ($spacer*1.5) ($spacer*2);
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        .content-img {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: 400px;
+        }
+
+        &:nth-child(even) {
+            margin: auto;
+
+            .img-halfgrid {
+                order: 2;
+            }
+
+            .content-halfgrid {
+                order: 1;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            &:nth-child(even) {
+                .img-halfgrid {
+                    order: 1;
+                }
+
+                .content-halfgrid {
+                    order: 2;
+                }
+            }
+        }
+    }
+
+    .carousel {
+        .item-gallery {
+            height: 400px;
+            @include bg-cover;
+        }
+    }
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 400px;
+    width: 100%;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 100%;
+}
+
+.row-divider {
+
+    [class*="col-"],
+    [class^="col-"] {
+        border-left: solid 1px $gray-400;
+
+        &:first-child {
+            border: none;
+        }
+
+        @include media-breakpoint-down(sm) {
+            border-left: none;
+            border-top: solid 1px $gray-400;
+        }
+    }
+}
+
+.hex {
+    @include bg-cover;
+    padding: ($spacer*5) 0 ($spacer*10);
+
+    .hex-wrapper {
+        position: relative;
+        margin: auto;
+        height: 550px;
+        width: 1010px;
+
+        img {
+            margin: auto $spacer;
+        }
+
+        .waste {
+            position: absolute;
+            left: 175px;
+            top: 269px;
+        }
+
+        .water {
+            position: absolute;
+            right: 175px;
+            top: 269px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .hex-wrapper {
+            position: relative;
+            margin: auto;
+            height: 450px;
+            width: 100%;
+
+            img {
+                margin: auto;
+                max-width: 150px;
+            }
+
+            .health {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            .energy {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .smart {
+                position: absolute;
+                left: 50%;
+                top: 140px;
+                transform: translateX(-50%);
+            }
+
+            .waste {
+                position: absolute;
+                left: 0;
+                top: initial;
+                bottom: 0;
+            }
+
+            .water {
+                position: absolute;
+                right: 0;
+                top: initial;
+                bottom: 0;
+            }
+        }
+    }
+}
